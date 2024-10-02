@@ -20,8 +20,10 @@ const Navbar = () => {
 
 	const pathname = usePathname();
 
+	const closeProfileMenu = () => setIsProfileMenuOpen(false);
+
 	const handleSignOutClick = () => {
-		setIsProfileMenuOpen(false);
+		closeProfileMenu();
 		signOut();
 	};
 
@@ -196,6 +198,7 @@ const Navbar = () => {
 											role='menuitem'
 											tabIndex='-1'
 											id='user-menu-item-0'
+											onClick={closeProfileMenu}
 										>
 											Your Profile
 										</Link>
@@ -205,6 +208,7 @@ const Navbar = () => {
 											role='menuitem'
 											tabIndex='-1'
 											id='user-menu-item-2'
+											onClick={closeProfileMenu}
 										>
 											Saved Properties
 										</Link>
